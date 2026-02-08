@@ -1,7 +1,7 @@
 //task1
 function newPrice(currentPrice , discount ) {
 
-    if( typeof currentPrice !== "number" || typeof discount !== "number")
+    if( typeof currentPrice !== "number" || typeof discount !== "number" || (currentPrice == "" && discount == "") )
     {
         const error = "Invalid";
         return error;
@@ -13,8 +13,6 @@ function newPrice(currentPrice , discount ) {
     const totalPrice = currentPrice - discountPrice;
     const totalPrice2 = totalPrice.toFixed(3);
     return totalPrice2;
-
-
 
     }
     
@@ -74,3 +72,64 @@ function finalScore(omr) {
 
 }
 
+//task4
+function gonoVote(array) {
+
+    let isha = true;
+    let haVote = 0;
+    let naVote = 0;
+
+    if( typeof array == 'string' || typeof array == 'object' || typeof array =='number')
+    {
+         const error = "Invalid";
+        return error;   
+    }
+    for ( const arr of array)
+    {
+        if( arr === 'ha')
+        {
+            haVote++;
+        }
+        else
+        {
+            naVote++;
+        }  
+    }
+    if(haVote === naVote)
+        {
+            const msgShow = "equal";
+            return msgShow;
+        }
+        else if ( haVote > naVote)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+}
+
+//task5
+function analyzeText(str) {
+     if( typeof str == "number" || typeof str =='object' || Array.isArray(str) || str =="" )
+    {
+        const error = "Invalid";
+        console.log(error)
+        return error;
+    }
+    let words = str.split(" ");
+    let longestWord = words[0];
+    for(const word of words) {
+        if(word.length > longestWord.length) {
+            longestWord = word;
+        }
+    }
+  
+    const finalresult = {
+         longwords  : longestWord,
+            token : words.join("").length
+    };
+    return finalresult;
+    
+console.log(finalresult); 
+}

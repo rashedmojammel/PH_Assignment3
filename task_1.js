@@ -1,7 +1,7 @@
-
+//task1
 function newPrice(currentPrice , discount ) {
 
-    if( typeof currentPrice !== "number" || typeof discount !== "number")
+    if( typeof currentPrice !== "number" || typeof discount !== "number" || (currentPrice == "" && discount == "") )
     {
         const error = "Invalid";
         return error;
@@ -14,11 +14,9 @@ function newPrice(currentPrice , discount ) {
     const totalPrice2 = totalPrice.toFixed(3);
     return totalPrice2;
 
-
-
     }
     
 }
 
-const amount = newPrice(1000,20)
+const amount = newPrice(0,20)
 
